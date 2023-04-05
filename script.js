@@ -30,6 +30,7 @@
 // console.log(document);
 
 const container = document.createElement("div");
+container.className = "container";
 container.style.display = "flex";
 container.style.flexWrap = "wrap";
 container.style.width = "800px";
@@ -39,15 +40,17 @@ const randomG = Math.floor(Math.random() * 256);
 const randomB = Math.floor(Math.random() * 256);
 for (let i = 0; i < 64; i++) {
   const tile = document.createElement("div");
+  tile.className = "tile";
   tile.style.width = "12.5%";
   tile.style.length = "12.5%";
 
   const row = Math.floor(i / 8);
   if (i % 2 === row % 2) {
-    tile.style.backgroundColor = `rgb(${randomR} ${randomG} ${randomB})`;
+    tile.style.backgroundImage = "linear-gradient(135deg,red , yellow";
   } else {
-    tile.style.backgroundColor = `rgb(${randomB} ${randomR} ${randomG})`;
+    tile.style.backgroundImage = "linear-gradient(135deg,red, yellow)";
   }
+
   container.append(tile);
 }
 
